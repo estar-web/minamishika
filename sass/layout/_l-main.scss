@@ -1,0 +1,9 @@
+@use "../global/" as gbl;
+
+.wrapper{
+
+  @include gbl.mq(sp){
+    // padding-right: gbl.$padding-sp;
+    // padding-left: gbl.$padding-sp;
+  }
+}

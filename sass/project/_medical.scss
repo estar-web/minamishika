@@ -1,0 +1,374 @@
+@use "../global/" as gbl;
+
+/* メインビュー---------------------------- */
+
+.hero-medical {
+  background: url(../img/pc/medical/page-medical_top.png) no-repeat center center / cover;
+
+  @include gbl.mq(sp) {
+    background-image: url(../img/sp/medical/page-medical_top-sp.png);
+  }
+
+}
+
+/* 診療一覧---------------------------- */
+.medical-summary {
+  margin-top: 82px;
+
+  @include gbl.mq(sp) {
+    margin-top: 66px;
+  }
+}
+
+.medical-summary__container {
+  padding: 0 140px;
+
+  @include gbl.mq(sp) {
+    padding-right: gbl.$padding-sp;
+    padding-left: gbl.$padding-sp;
+  }
+}
+
+.medical-summary__wrapper {
+  +.medical-summary__wrapper {
+    margin-top: 79px;
+
+    @include gbl.mq(sp) {
+      margin-top: 83px;
+    }
+  }
+}
+
+.medical-summary__head {
+  position: relative;
+}
+
+.medical-summary__title {
+  @include gbl.font(28);
+  line-height: gbl.lh(40, 28);
+  letter-spacing: gbl.ls_from_px(2.24, 28);
+  font-weight: 700;
+
+  @include gbl.mq(sp) {
+    @include gbl.font(20);
+    line-height: gbl.lh(28, 20);
+    letter-spacing: gbl.ls_from_px(1.6, 20);
+  }
+}
+
+.medical-summary__label {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: calc(118px + 25px);
+  transform: translateY(-50%);
+  width: fit-content;
+  padding: 10px 11px;
+  border-radius: 24px;
+  color: map-get(gbl.$color, text-2nd);
+  font-weight: 700;
+  @include gbl.font(14);
+  letter-spacing: gbl.ls_from_px(1.12, 14);
+  text-align: center;
+  transition: all 0.3s ease 0s;
+
+  @include gbl.mq(sp) {
+    left: calc(84px + 24px);
+  }
+
+  &.is-general {
+    background-color: map-get(gbl.$color, main);
+  }
+
+  &.is-special {
+    background-color: map-get(gbl.$color, accent);
+  }
+}
+
+.medical-summary__items {
+  display: grid;
+  margin-top: 32px;
+  grid-template-columns: repeat(5, fit-content(25%));
+  column-gap: 16px;
+
+  @include gbl.mq(sp) {
+    margin-top: 34px;
+    grid-template-columns: 100%;
+    column-gap: 0;
+    row-gap: 14px;
+    // @include gbl.font(20);
+    // line-height: gbl.lh(, );
+    // letter-spacing: gbl.ls_from_px(1.6, 20);
+  }
+}
+
+.medical-summary__item {}
+
+.medical-summary__link {
+  display: block;
+  position: relative;
+  padding: 22px 29px;
+  border: 2px solid map-get(gbl.$color, main);
+  border-radius: 12px;
+  color: map-get(gbl.$color, main);
+  @include gbl.font(24);
+  letter-spacing: gbl.ls_from_px(1.92, 24);
+  font-weight: 700;
+  text-align: center;
+
+  transition: background-color gbl.$ts-time ease-out 0s,
+    opacity gbl.$ts-time ease-out 0s,
+    padding gbl.$ts-time ease-out 0s;
+
+  @include gbl.mq(sp) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    @include gbl.font(20);
+    line-height: gbl.lh(48, 20);
+    letter-spacing: gbl.ls_from_px(1.6, 20);
+  }
+
+  @include gbl.hover() {
+    padding-top: 10px;
+    padding-bottom: 28px;
+    background-color: #dff1fd;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: url(../img/pc/common/arrow.svg) no-repeat center center / contain;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+    }
+  }
+}
+
+
+/* 一般診療/特殊診療---------------------------- */
+.general-bg-top {
+  margin-top: 157px;
+
+  @include gbl.mq(sp) {
+    // margin-top: 100px;
+    margin-top: 97px;
+  }
+}
+
+.special-bg-top {
+  margin-top: 152px;
+
+  @include gbl.mq(sp) {
+    margin-top: 0;
+  }
+}
+
+.medical-details {
+  padding-bottom: 86px;
+  background-color: map-get(gbl.$color, sub-02);
+  position: relative;
+
+  @include gbl.mq(sp) {
+    padding-top: 31px;
+    padding-bottom: 63px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: transparent url(../img/pc/top/deco-kirakira2-w.svg) no-repeat center center / contain;
+    bottom: 0;
+    left: 3.125%;
+    width: 57px;
+    height: 57px;
+
+    @include gbl.mq(sp) {
+      width: 25px;
+      height: 25px;
+      bottom: 13px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background: transparent url(../img/pc/top/deco-kirakira-w.svg) no-repeat center center / contain;
+    bottom: -1%;
+    right: 1.598%;
+    width: 125.31px;
+    height: 138px;
+    z-index: map-get(gbl.$z-map, base);
+
+    @include gbl.mq(sp) {
+      width: 54.16px;
+      height: 59px;
+      bottom: -5px;
+      right: 1.7%;
+    }
+  }
+}
+
+.medical-details__container {
+  padding: 0 140px;
+
+  @include gbl.mq(sp) {
+    padding-right: gbl.$padding-sp;
+    padding-left: gbl.$padding-sp;
+  }
+}
+
+.medical-details__title {}
+
+.medical-details__item {
+  background-color: #fff;
+  border-radius: 20px;
+  position: relative;
+  padding: 51px 60px 60px 59px;
+  margin-top: 41px;
+
+  @include gbl.mq(sp) {
+    padding: 22px 20px 20px 20px;
+  }
+
+  &:first-of-type {
+    margin-top: 60px;
+
+    @include gbl.mq(sp) {
+      margin-top: 40px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    top: 0;
+    right: 6%;
+
+    @include gbl.mq(sp) {
+      width: 80px;
+      height: 60px;
+      right: 20px;
+    }
+  }
+
+  &.general-detail {
+    &:first-of-type {
+      margin-top: 61px;
+
+      @include gbl.mq(sp) {
+        margin-top: 40px;
+      }
+    }
+
+    &::after {
+      background: transparent url(../img/pc/medical/tag-general.svg) no-repeat center center / contain;
+      top: -0.8px;
+      right: 6.1%;
+    }
+  }
+
+  &.special-detail {
+    &:first-of-type {
+      margin-top: 61px;
+
+      @include gbl.mq(sp) {
+        margin-top: 40px;
+      }
+    }
+
+    &::after {
+      background: transparent url(../img/pc/medical/tag-special.svg) no-repeat center center / contain;
+    }
+  }
+}
+
+.medical-details__head {
+  padding-bottom: 38px;
+  border-bottom: 1px solid #c2c2c2;
+  display: flex;
+  align-items: center;
+
+  @include gbl.mq(sp) {
+    display: block;
+    padding-bottom: 21px;
+  }
+}
+
+.medical-details__heading {
+  @include gbl.font(28);
+  line-height: gbl.lh(44, 28);
+  letter-spacing: gbl.ls_from_px(2.24, 28);
+  font-weight: 700;
+  margin-right: 38px;
+
+  @include gbl.mq(sp) {
+    @include gbl.font(20);
+    line-height: gbl.lh(28, 20);
+    letter-spacing: gbl.ls_from_px(1.6, 20);
+    margin-right: 0;
+  }
+}
+
+.medical-details__description {
+  @include gbl.font(14);
+  // line-height: gbl.lh(, );
+  letter-spacing: gbl.ls_from_px(1.12, 14);
+  font-weight: 700;
+  color: map-get(gbl.$color, main);
+
+  @include gbl.mq(sp) {
+    margin-top: 23px;
+  }
+}
+
+.medical-details__body {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding-top: 39px;
+
+  @include gbl.mq(sp) {
+    display: block;
+    padding-top: 19px;
+  }
+
+}
+
+.medical-details__text {
+  flex: 0 0 47.727%;
+  @include gbl.font(14);
+  line-height: gbl.lh(24, 14);
+}
+
+.medical-details__image {
+  flex: 0 0 47.727%;
+
+  @include gbl.mq(sp) {
+    margin-top: 16px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.general-bg-bottom {
+
+  @include gbl.mq(sp) {
+    margin-bottom: 98px;
+  }
+}
+
+.special-bg-bottom {
+  margin-bottom: 160px;
+
+  @include gbl.mq(sp) {
+    margin-bottom: 100px;
+  }
+}

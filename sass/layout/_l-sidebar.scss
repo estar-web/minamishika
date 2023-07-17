@@ -1,0 +1,183 @@
+@use "../global/" as gbl;
+
+/* サイドバー---------------------------- */
+.widget{
+  margin-top: 61px;
+
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.widget_text{
+
+}
+
+.widget_custom_html{
+
+}
+
+/* サイドバータイトル共通パーツ------------- */
+.widget-title-wrapper{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #888;
+  padding-bottom: 8px;
+}
+
+.widget-icon{
+  margin-right: 10px;
+
+  img{
+
+  }
+
+}
+
+.widget-title{
+  font-weight: 700;
+}
+
+/* サイド個別バーツ------------------------ */
+/* クリニック紹介------------------------- */
+.wprofile{
+  margin-top: 20px;
+}
+
+.wprofile-img{
+  img{
+    width: 100%;
+  }
+}
+
+.wprofile-content{
+
+}
+
+.wprofile-ttl{
+  margin-top: 22px;
+  font-weight: 700;
+}
+
+.wprofile-txt{
+  @include gbl.font(14);
+  line-height: gbl.lh(24, 14);
+  margin-top: 16px;
+}
+
+.wprofile-link{
+  display: inline-block;
+  margin-top: 14px;
+  margin-left: 3px;
+  color: map-get(gbl.$color, main);
+  position: relative;
+  @include gbl.font(14);
+  
+  &::after{
+     content: "";
+     position: absolute;
+     top: 50%;
+     right: -18px;
+     transform: translateY(-50%);
+     background: transparent url(../img/pc/blog-archive/arrow.svg);
+     width: 18px;
+     height: 18px;
+  }
+}
+
+/* 新着記事------------------------- */
+.widget_recent{
+
+}
+
+.wpost-items{
+  margin-top: 20px;
+}
+
+.wpost-item{
+}
+
+.archive__blog-image.wpost-item-img{
+  flex-basis: 40%;
+
+  @include gbl.mq(sp){
+    flex-basis: 39.703%;
+  }
+
+  img{
+    
+  }
+}
+
+.wpost-item{
+  
+}
+.archive__blog-text{
+  
+}
+
+.archive__blog-text.wpost-item-body{
+  margin-left: 10px;
+  padding-top: 2px;
+
+  @include gbl.mq(sp){
+    padding-top: 7px;
+  }
+}
+
+.archive__blog-cat.wpost-item-cat{
+  @include gbl.font(10);
+  width: 56px;
+  padding: 0.4em 0.8em;
+}
+
+.archive__blog-card-title.wpost-item-title{
+  @include gbl.font(14);
+  line-height: gbl.lh(20, 14);
+  margin-top: 7px;
+  // letter-spacing: gbl.ls_from_px(, );
+
+  @include gbl.mq(sp){
+    margin-top: 6px;
+  }
+}
+
+.archive__blog-date.wpost-item-date{
+  @include gbl.font(11);
+  margin-top: 8px;
+  line-height: 1;
+  // letter-spacing: gbl.ls_from_px(, );
+
+  @include gbl.mq(sp){
+    margin-top: 9px;
+  }
+}
+
+/* カテゴリー------------------------- */
+.widget_category{
+  
+}
+
+.widget_category_list{
+  margin-top: 20px;
+  padding-left: 32px;
+}
+
+.widget_category_list_item{
+  margin-top: 21px;
+  position: relative;
+  &:first-child{
+    margin-top: 0;
+  }
+  
+  &::after{
+     content: "";
+     position: absolute;
+     top: 50%;
+     left: -12px;
+     transform: translateY(-50%);
+     background: transparent url(../img/pc/blog-archive/icon-arrow-blue.svg);
+     width: 6px;
+     height: 12px;
+  }
+}

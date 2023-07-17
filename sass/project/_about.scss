@@ -1,0 +1,216 @@
+@use "sass:math";
+@use "../global/" as gbl;
+
+/* メインビュー---------------------------- */
+
+.hero-about{
+    background: url(../img/pc/about/page-about_top.png) no-repeat center center / cover;
+
+  @include gbl.mq(sp){
+        background-image: url(../img/sp/about/page-about_top-sp.png);
+  }
+
+}
+
+/* ポリシーと特徴------------------------ */
+.about__pandf {
+  margin-top: 83px;
+
+  @include gbl.mq(sp) {
+    margin-top: 61px;
+  }
+}
+
+.pandf__container {}
+
+.pandf__title {}
+
+.pandf__contents {
+
+  height: 725px;
+  padding-top: 160px;
+  padding-bottom: 127px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+
+  &:nth-of-type(2n-1) {
+    flex-direction: row-reverse;
+  }
+
+
+  @include gbl.mq(sp) {
+    display: block;
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 95px;
+    margin-bottom: 100px;
+  }
+
+  &:first-of-type {
+    padding-top: 180px;
+    padding-bottom: 107px;
+    margin-top: 60px;
+
+    @include gbl.mq(sp) {
+      margin-top: 33px;
+      margin-bottom: 0;
+      padding-top: 110px;
+      padding-bottom: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-image: url(../img/pc/about/policy-bg.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 103%;
+      height: 100%;
+      top: 50%;
+      left: 32.5%;
+      transform: translateY(-50%);
+      z-index: -1;
+
+      @include gbl.mq(sp) {
+        background-size: 143%;
+        left: 3%;
+        top: 51%;
+      }
+    }
+  }
+}
+
+.pandf__box {
+  flex: 0 1 50%;
+  padding: 27px 133px 35px 93px;
+
+  &.is-feature{
+    padding: 28px 93px 35px 140px;
+
+    @include gbl.mq(sp){
+      padding: 0 gbl.$padding-sp;
+    }
+  }
+
+
+  @include gbl.mq(sp) {
+    width: 100%;
+    padding: 0 gbl.$padding-sp;
+  }
+}
+
+.pandf__lead-txt {
+  font-size: gbl.rem(28);
+  line-height: gbl.lh(44, 28);
+  letter-spacing: gbl.ls_from_px(2.24, 28);
+  margin-top: 17px;
+  font-weight: 700;
+
+  @include gbl.mq(sp) {
+    margin-top: 8px;
+    @include gbl.font(20);
+    letter-spacing: gbl.ls_from_px(1.6, 20);
+  }
+}
+
+.pandf__txt {
+  font-size: gbl.rem(14);
+  line-height: gbl.lh(24, 14);
+  margin-top: 35px;
+
+  @include gbl.mq(sp) {
+    margin-top: 28px;
+  }
+}
+
+.pandf__image {
+  flex: 1 0 50%;
+  height: 100%;
+  
+  &.is-policy {
+    background: transparent url(../img/pc/about/policy.png) no-repeat center center /100% 100%;
+    
+    @include gbl.mq(sp) {
+      margin-top: 38px;
+      width: 100%;
+      background-size: contain;
+      background-position: left 1% center;
+      padding-top: 61%;
+      background-image: url(../img/sp/about/policy-sp.png);
+      // border-radius: 0 20px 20px 0;
+      // overflow: hidden;
+    }
+  }
+  
+  &.is-feature {
+    background: transparent url(../img/pc/about/feature.png) no-repeat center center /100% 100%;
+    
+    @include gbl.mq(sp) {
+      margin-top: 37px;
+      width: 100%;
+      background-size: contain;
+      background-position: right 1% center;
+      background-image: url(../img/sp/about/feature-sp.png);
+      padding-top: 61%;
+    }
+  }
+
+}
+
+
+
+/* ポリシーと特徴------------------------ */
+.about__inside {
+  margin-top: 32px;
+  padding-bottom: 160px;
+
+  @include gbl.mq(sp) {
+    padding-bottom: 101px;
+  }
+
+}
+
+.about__inside-cards {
+  margin-top: 58px;
+  padding: 0 140px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2.402%;
+  row-gap: 24px;
+
+  @include gbl.mq(sp) {
+    margin-top: 40px;
+    padding-right: gbl.$padding-sp;
+    padding-left: gbl.$padding-sp;
+
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3.2836%;
+    row-gap: 10px;
+  }
+}
+
+.about__inside-card {
+
+  @include gbl.mq(sp) {
+
+  }
+  
+  &:nth-child(n+4) {
+    
+    @include gbl.mq(sp) {}
+  }
+  
+  img {
+    width: 100%;
+    
+    @include gbl.mq(sp){
+      border-radius: 20px;
+    }
+  }
+}

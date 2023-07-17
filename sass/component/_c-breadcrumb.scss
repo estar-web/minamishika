@@ -1,0 +1,38 @@
+@use "sass:math";
+@use "../global/" as gbl;
+
+/* パンくずリスト---------------------------- */
+.breadcrumb {
+	color: #8d8d8d;
+	font-size: 12px;
+	margin-top: 16px;
+	padding-left: 90px;
+
+	@include gbl.mq(sp){
+		padding-left: gbl.$padding-sp;
+		margin-top: 13px;
+	}
+
+	a{
+		text-decoration: none;
+		transition: all 0.3s ease 0s;
+
+		&:hover{
+			opacity: 0.6;
+		}
+	}
+
+	i{
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+}
+
+.angle-right{
+	margin-left: 6px;
+}
+
+.current-item{
+	color: map-get(gbl.$color, text-1st);
+	margin-left: 5px;
+}
