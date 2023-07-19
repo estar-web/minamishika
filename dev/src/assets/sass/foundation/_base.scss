@@ -1,0 +1,23 @@
+@use "../global/" as gbl;
+
+body{
+  font-family: gbl.$mainFont;
+  color: map-get(gbl.$color, textColor);
+  padding-top: gbl.$size-header-height-pc;
+
+  @include gbl.mq(sp){
+    padding-top: gbl.$size-header-height-sp;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.container{
+  margin: 0 auto;
+  // width: gbl.$max-inner;
+  width: 100%;
+  max-width: gbl.$max-canvas-size;
+}

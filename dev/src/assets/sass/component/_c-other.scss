@@ -1,0 +1,102 @@
+@use "../global/" as gbl;
+
+.c-tel-number{
+  position: relative;
+  font-size: gbl.rem(32);
+  // font-size: 32px;
+  letter-spacing: gbl.ls_from_px(-0.64, 32);
+  line-height: gbl.lh(36px,32px);
+  color: map-get(gbl.$color, main);
+  font-weight: 700;
+  display: inline-block;
+  white-space: nowrap;
+
+  &.b-parts{
+    // @include gbl.mq(sp){
+      @include gbl.font(20);
+      line-height: gbl.lh(23,20);
+      margin-left: 23px;
+
+      @include gbl.mq(sp){
+        letter-spacing: -0.003em;
+      }
+    // }
+    &::before{
+      // position: absolute;
+      // content: '';
+      // top: 50%;
+      // transform: translateY(-50%);
+      left: -18px - 4px;
+      width: 18px;
+      height: 18px;
+      // background: url(../img/pc/top/icon_tel.svg) no-repeat center center / contain;
+    }
+  }
+
+  &.f-parts{
+    margin-left: 34px;
+  }
+
+  &::before{
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    left: -28px - 4px;
+    width: 28px;
+    height: 28px;
+    background: url(../img/pc/top/icon_tel.svg) no-repeat center center / contain;
+  }
+}
+
+.sp-bottom{
+  position: fixed;
+  right: 0;
+  top: calc(gbl.$size-header-height-pc + 96px);
+  z-index: map-get(gbl.$z-map, bottom );
+
+  @include gbl.mq(sp){
+    border-top: 1px solid map-get(gbl.$color, main);
+    background-color: rgba(#fff, 0.85);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    top: auto;
+    bottom: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    padding-top: 7px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    padding-left: 8px;
+  }
+
+}
+
+.c-fixed-part{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.c-fixed-info{
+  text-align: center;
+  width: 53.687%;
+}
+
+.c-time{
+color: map-get(gbl.$color, main);
+  &.b-parts{
+      @include gbl.font(10);
+      color: map-get(gbl.$color, text-1st);
+      margin-top: 4px;
+  }
+}
+
+.c-text-accent{
+  color: map-get(gbl.$color, accent );
+}
+
+.newline {
+  display: block;
+  margin-top: 24px;
+}

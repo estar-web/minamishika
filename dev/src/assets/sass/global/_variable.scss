@@ -1,0 +1,54 @@
+// color
+$color: (
+  main: #1391E6,
+  text-1st: #393939,
+  text-2nd: #FFFFFF,
+  sub-01: #0060A0,
+  sub-02: #DFF1FD,
+  accent: #EE5A6D
+);
+
+// size
+$max-inner: 1200px;
+$max-canvas-size: 1280px;
+$size-header-height-pc: 80px;
+$size-header-height-sp: 60px;
+
+// padding
+$padding: 60px;
+$padding-sp: 20px;
+// $inner-padding: 80px;
+
+//FontSize
+// $font-size-base: 1.4rem;
+$font-size-base: 14px;
+
+// font-family
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap');
+$mainFont: 'M PLUS Rounded 1c', sans-serif;
+
+// breakpoint
+$breakpoints : (
+  "xl":"screen and (max-width:1600px)",
+  "l":"screen and (max-width:1280px)",
+  "m":"screen and (max-width:1080px)",
+  "hov": "screen and (min-width: 768px)",
+  "sp":"screen and (max-width:767px)",
+  "xs":"screen and (max-width:499px)",
+);
+
+// transition time
+$ts-time: 0.3s;
+
+// z-index
+$z-map : (
+  modal: 110,   // モダール
+  header: 100,  //ヘッダー
+  bottom: 100,  //固定ボトム
+	drawer: 40, // ドロワー
+	floating: 30, // フローティングアイテム
+  sidebar: 10,
+  footer: 10, // フッター
+  base: 1,
+  under: -1,
+);

@@ -1,0 +1,51 @@
+@use "../global/" as gbl;
+
+
+.bg-deco-top {
+  height: 15.781vw;
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: transparent url(../img/pc/top/bg-top.svg) no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: inherit;
+    top: 3px;
+    left: 0;
+  }
+
+  @include gbl.mq(sp) {
+    margin-top: 94px;
+    height: 23.481vw;
+
+    &::after {
+      background: transparent url(../img/sp/top/guide-bg-top-sp.svg) no-repeat;
+    }
+  }
+}
+
+.bg-deco-bottom {
+  height: 7.578vw;
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: transparent url(../img/pc/top/bg-bottom.svg) no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: inherit;
+    bottom: 1px;
+    left: 0;
+
+    @include gbl.mq(sp){
+      background-image: url(../img/sp/top/guide-bg-bottom-sp.svg);
+    }
+  }
+}
