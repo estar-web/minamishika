@@ -13,7 +13,7 @@ function my_script_init()
   wp_enqueue_style("my", get_template_directory_uri() . "/css/style.css", array(), filemtime(get_theme_file_path('css/style.css')), "all");
   wp_enqueue_style("animation", get_template_directory_uri() . "/css/animate.css", array(), filemtime(get_theme_file_path('css/animate.css')), "all");
   wp_enqueue_script("animation", get_template_directory_uri() . "/js/wow.min.js", array("jquery"), filemtime(get_theme_file_path('js/wow.min.js')), true);
-  wp_enqueue_script("my", get_template_directory_uri() . "/js/script.js", array("jquery"), filemtime(get_theme_file_path('js/script.js')), true);
+  wp_enqueue_script("myscript", get_template_directory_uri() . "/js/script.js", array("jquery"), filemtime(get_theme_file_path('js/script.js')), true);
 }
 add_action("wp_enqueue_scripts", "my_script_init");
 
@@ -217,6 +217,4 @@ function wpcf7_validate_kana($result, $tag)
 }
 add_filter('wpcf7_validate_text',  'wpcf7_validate_kana', 20, 2);
 add_filter('wpcf7_validate_text*', 'wpcf7_validate_kana', 20, 2);
-// add_filter('wpcf7_validate_text',  'wpcf7_validate_kana', 11, 2);
-// add_filter('wpcf7_validate_text*', 'wpcf7_validate_kana', 11, 2);
 

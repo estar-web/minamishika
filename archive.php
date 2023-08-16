@@ -11,7 +11,7 @@
 
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
-<div id="contents">
+<div id="contents" class="container">
   <div id="inner">
     <main>
       <section class="archive">

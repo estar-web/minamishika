@@ -32,7 +32,7 @@ endif; ?>
 <!-- breadcrumb -->
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
-<div id="single-contents">
+<div id="single-contents" class="container">
   <div id="single-inner">
     <main>
       <?php

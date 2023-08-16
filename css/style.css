@@ -338,7 +338,7 @@ figure {
 
 body {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  /* padding-top: 50px; */
+  font-weight: 500;
   padding-top: 80px;
 }
 
@@ -1007,26 +1007,30 @@ a {
   flex: 0 0 270px;
 }
 
+
 @media screen and (max-width:767px) {
   .header__logo {
     width: 270px;
-    /* width: 72%; */
-    /* padding-top: 15px; */
   }
 }
 
 @media screen and (max-width:321px) {
   .header__logo {
-    /* width: 220px; */
     width: 68.75%;
     padding-top: 5px;
   }
 }
 
 .header__logo-image {
-
+  
   vertical-align: middle;
   width: 100%;
+}
+
+@media screen and (max-width:1024px) {
+  .header__logo-image {
+    vertical-align: bottom;
+  }
 }
 
 .header__nav {
@@ -1071,9 +1075,9 @@ a {
   .header-burger {
     display: block;
     height: 15px;
-    right: 7px;
+    right: 25px;
     position: absolute;
-    top: 40px;
+    top: 30px;
     -webkit-transition: right 0.3s linear;
     transition: right 0.3s linear;
     width: 27px;
@@ -1430,7 +1434,6 @@ a {
   text-align: center;
   height: inherit;
   font-size: 11px;
-  font-weight: 500;
   background-position: 50% 25%;
   background-size: 24px 24px;
   background-repeat: no-repeat;
@@ -1495,7 +1498,7 @@ a {
 
 @media screen and (max-width:1024px) {
   .header__info {
-    margin-left: 0;
+    display: none;
   }
 }
 
@@ -1512,15 +1515,11 @@ a {
 
 .footer {
   background-color: #DFF1FD;
-  /* max-width: 1080px;
-  margin: 0 auto; */
 }
 
 .footer__bg-wave {
   position: relative;
   width: 100%;
-  /* max-width: 1080px;
-  margin: 0 auto; */
   height: 2.4vw;
 }
 
@@ -1548,9 +1547,7 @@ a {
 }
 
 .footer__container {
-  padding: 56px 140px 60px;
-    max-width: 1280px;
-  margin: 0 auto;
+  padding: 56px 0 60px;
 }
 
 @media screen and (max-width:1024px) {
@@ -2227,8 +2224,12 @@ a {
 
 @media screen and (max-width:1024px) {
   .top__news {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
     padding-right: 30px;
-    padding-left: 30px;
+    padding-left: 65px;
   }
 }
 
@@ -2469,11 +2470,12 @@ a {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   border-radius: 12px;
+  max-width: 540px;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:1024px) {
   .top__medical-time {
-    margin-top: -7px;
+    margin-top: -12px;
   }
 }
 
@@ -2732,7 +2734,9 @@ a {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 50%;
   flex: 1 0 50%;
-  background: transparent url(../img/pc/top/concept-img1.png) no-repeat center center/100% 100%;
+  border-radius: 0 20px 20px 0;
+  /* background: transparent url(../img/pc/top/concept-img1.png) no-repeat center center/100% 100%; */
+  background: transparent url(../img/pc/top/concept-img1.png) no-repeat center center/ cover;
   height: 100%;
 }
 
@@ -2925,6 +2929,12 @@ a {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.7142857143;
+}
+
+@media screen and (max-width:1024px) {
+  .recommend-item-text {
+    margin-top: 0;
+  }
 }
 
 .top__guide {
@@ -3610,17 +3620,19 @@ a {
   -ms-flex: 1 0 50%;
   flex: 1 0 50%;
   height: 100%;
+  max-height: 438px;
 }
 
 .pandf__image.is-policy {
-  background: transparent url(../img/pc/about/policy.png) no-repeat center center/100% 100%;
+  background: transparent url(../img/pc/about/policy.png) no-repeat center center/cover;
+  border-radius: 0 20px 20px 0;
 }
 
 @media screen and (max-width:767px) {
   .pandf__image.is-policy {
     margin-top: 38px;
     width: 100%;
-    background-size: contain;
+    /* background-size: contain; */
     background-position: left 1% center;
     padding-top: 61%;
     background-image: url(../img/sp/about/policy-sp.png);
@@ -3628,14 +3640,14 @@ a {
 }
 
 .pandf__image.is-feature {
-  background: transparent url(../img/pc/about/feature.png) no-repeat center center/100% 100%;
+  background: transparent url(../img/pc/about/feature.png) no-repeat center center/cover;
+  border-radius: 20px 0 0 20px;
 }
 
 @media screen and (max-width:767px) {
   .pandf__image.is-feature {
     margin-top: 37px;
     width: 100%;
-    background-size: contain;
     background-position: right 1% center;
     background-image: url(../img/sp/about/feature-sp.png);
     padding-top: 61%;
@@ -4300,6 +4312,7 @@ a {
     margin-top: 59px;
     margin-right: 0;
     margin-left: 0;
+    justify-content: center;
   }
 }
 
@@ -4314,7 +4327,7 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
-  padding: 0.3em 0 0.6em;
+  padding: 0.6em 0 0.6em;
   margin-right: 10px;
   -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out;
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
@@ -6124,17 +6137,21 @@ input[type=checkbox]:checked+.contact-checkLabel:after {
   text-align: left;
 }
 
+.profile-row{
+}
+
 .profile-title {
   padding: 16.5px 20px;
   background-color: #DFF1FD;
   border-bottom: solid 1px #fff;
   width: 50%;
+  font-weight: 500;
 }
 
 @media screen and (max-width:1024px) {
   .profile-title {
     padding-right: 5px;
-    padding-left: 5px;
+    padding-left: 20px;
   }
 }
 

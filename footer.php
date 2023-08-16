@@ -1,6 +1,6 @@
 <div class="footer__bg-wave"></div>
 <footer class="footer">
-	<div class="footer__container">
+	<div class="footer__container container">
 		<div class="footer__info wow slideInDown">
 			<div class="footer__info-box wow slideInLeft">
 				<h1 class="footer__logo">

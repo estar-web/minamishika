@@ -44,27 +44,29 @@
   </section><!-- /about__policy-feature -->
 
   <section id="inside" class="about__inside">
-    <h2 class="about__inside-title c-title-jp wow slideInDown">院内の様子</h2>
-    <div class="about__inside-cards"><!-- /.about__inside-cards -->
-      <figure class="about__inside-card wow slideInLeft">
-        <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_1.png" alt="">
-      </figure>
-      <figure class="about__inside-card wow slideInDown">
-        <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_2.png" alt="">
-      </figure>
-      <figure class="about__inside-card wow slideInRight">
-        <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_3.png" alt="">
-      </figure>
-      <figure class="about__inside-card wow slideInLeft">
-        <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_4.png" alt="">
-      </figure>
-      <figure class="about__inside-card wow fadeInUp">
-        <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_5.png" alt="">
-      </figure>
-      <figure class="about__inside-card wow slideInRight">
-        <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_6.png" alt="">
-      </figure>
-    </div>
+    <div class="container">
+      <h2 class="about__inside-title c-title-jp wow slideInDown">院内の様子</h2>
+      <div class="about__inside-cards"><!-- /.about__inside-cards -->
+        <figure class="about__inside-card wow slideInLeft">
+          <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_1.png" alt="">
+        </figure>
+        <figure class="about__inside-card wow slideInDown">
+          <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_2.png" alt="">
+        </figure>
+        <figure class="about__inside-card wow slideInRight">
+          <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_3.png" alt="">
+        </figure>
+        <figure class="about__inside-card wow slideInLeft">
+          <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_4.png" alt="">
+        </figure>
+        <figure class="about__inside-card wow fadeInUp">
+          <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_5.png" alt="">
+        </figure>
+        <figure class="about__inside-card wow slideInRight">
+          <img src="<?php echo get_template_directory_uri() ?>/img/pc/about/about-inside_6.png" alt="">
+        </figure>
+      </div>
+    </div><!-- /.container -->
   </section><!-- /.about__inside -->
 </main>
 

@@ -1,16 +1,16 @@
 //wow使用のための初期化
 // new WOW().init();
 var pcWidth = window.matchMedia('screen and (min-width: 769px)');
-if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){new WOW().init();}
+if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)) { new WOW().init(); }
 
-$(window).resize(function() {
-  if (window.matchMedia('(min-width: 768px)').matches){
-   $('.js-anime').attr({
-    'data-wow-offset': '30',
-    'data-wow-delay': '0.5s'
-   });
+$(window).resize(function () {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    $('.js-anime').attr({
+      'data-wow-offset': '30',
+      'data-wow-delay': '0.5s'
+    });
   }
- });
+});
 
 var $header = $('#js-header');
 
@@ -28,10 +28,9 @@ $('#js-overlay').on('click', function (e) {
   $header.removeClass('add-active');
 });
 
-// var pcWidth = window.matchMedia('screen and (min-width: 769px)');
 //PC幅に応じてクラスのつけ外し処理
 function checkBreakPoint() {
-  let targetClass = $(this).attr("data-target");
+
   if (pcWidth.matches) {
     $header.removeClass('add-active');
     $header.find('*').removeClass('add-active');
@@ -42,16 +41,17 @@ function checkBreakPoint() {
 href = location.href;
 var links = $(".header__nav-link");
 
-links.each(function (index, value) {
-  if (pcWidth.matches) {
-    if (value.href == href) {
-      $(".header__nav-link").eq(index).addClass("is-current");
+$(window).resize(function () {
+  links.each(function (index, value) {
+    if (pcWidth.matches) {
+      if (value.href == href) {
+        $(".header__nav-link").eq(index).addClass("is-current");
+      }
+    } else {
+      $(".header__nav-link").eq(index).removeClass("is-current");
     }
-  } else {
-    $(".header__nav-link").eq(index).removeClass("is-current");
-  }
+  });
 });
-
 
 //リンクで飛んだ際に、ヘッダーの高さ分スクロールした状態で遷移する処理
 $(window).on('load', function () {
@@ -106,19 +106,19 @@ $(window).on('scroll', function () {
 // };
 // wowBlog();
 
-const wowBlog = function() {
+const wowBlog = function () {
   const $wowLoop = document.getElementsByClassName('js-wow');
   let loopIndex = 0;
   let loopDelay = 0;
   const loopLength = $wowLoop.length;
   while (loopIndex < loopLength) {
-   $wowLoop[loopIndex].dataset.wowDelay = loopDelay + 's';
-   loopIndex++
-   // 時間差の秒数はお好みで書き換えてください
-   loopDelay += 0.2;
+    $wowLoop[loopIndex].dataset.wowDelay = loopDelay + 's';
+    loopIndex++
+    // 時間差の秒数はお好みで書き換えてください
+    loopDelay += 0.2;
   }
- }
- wowBlog();
+}
+wowBlog();
 
 //トップページのスワイパー
 const mySwiper1 = new Swiper('.top-swiper', {
